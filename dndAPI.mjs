@@ -41,4 +41,14 @@ async function getAllData(){
 }
 getEndpoints().then(()=>getAllData()).then(()=>{console.log("Done")});
 
-export {data}
+async function getMonster(id){
+    const data = await fetchData(root + 'monsters/' + id);
+    return data;
+}
+
+async function getMonsterImage(id){
+    const img = await fetchData(root + 'images/monsters/' + id);
+    return img;
+}
+
+export {root, data, getMonster, getMonsterImage};

@@ -1,0 +1,16 @@
+.statBlock{
+    background-color:palegoldenrod;
+}
+
+.stats, th, td{
+    border:1px solid black;
+    border-collapse:collapse;
+}
+
+.monsterImg{
+    height:300px;
+}
+
+.hidden{
+    display:none;
+}
