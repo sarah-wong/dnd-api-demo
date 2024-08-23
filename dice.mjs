@@ -10,7 +10,6 @@ function roll(str){
     let total = 0;
     for (const match of matches) {
         const groups = match.groups;
-        console.log(groups);
         
         let roll = 0;
         if(groups['dice']){

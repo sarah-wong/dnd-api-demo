@@ -1,12 +1,27 @@
 .statBlock{
-    background-color:palegoldenrod;
+    background:url("https://images.pond5.com/old-yellow-brown-vintage-parchment-illustration-020576673_iconl_nowm.jpeg");
+    background-position:center;
     width:fit-content;
     display:flex;
     justify-content: space-evenly;
     gap:2em;
+    color:#58170d;
+}
+.statBlock hr{
+    color:#58170d;
 }
 .name{
     margin:0px;
+    
+}
+.attributes{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+}
+.attr{
+    margin:0px 0.5em;
 }
 
 .stats, th, td{
@@ -20,4 +35,8 @@
 
 .hidden{
     display:none;
+}
+
+.searchResults li:hover{
+    text-decoration:underline;
 }

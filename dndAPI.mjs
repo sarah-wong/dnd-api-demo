@@ -11,6 +11,7 @@ const options = {
 
 const endpoints = [];
 const data = {};
+const monsters = [];
 
 async function fetchData(url){
     const response = await fetch(url, options);
@@ -39,7 +40,6 @@ async function getAllData(){
         })
     }
 }
-getEndpoints().then(()=>getAllData()).then(()=>{console.log("Done")});
 
 async function getMonster(id){
     const data = await fetchData(root + 'monsters/' + id);
@@ -50,5 +50,7 @@ async function getMonsterImage(id){
     const img = await fetchData(root + 'images/monsters/' + id);
     return img;
 }
+
+getEndpoints().then(()=>getAllData()).then(()=>{console.log("Done")});
 
 export {root, data, getMonster, getMonsterImage};

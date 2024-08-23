@@ -11,38 +11,56 @@
         <script type="module" src="dndAPI.mjs" async defer></script>
     </head>
     <body>
-        
-        <label for="monster search">Search Monsters by Name:</label>
-        <input type="search" name="monster search" id="monsterSearch"><br>
-        <button class="randomMonster">Get a Random Monster</button>
+        <form action="#" class="monsterSearch">
+            <label for="searchbar">Search Monsters by Name:</label>
+            <input type="search" name="searchbar" class="textInput">
+            <button class="searchBtn">Search</button>
+            <button class="randomBtn">Get a Random Monster</button>
+            <br>
+            <em class="statusText hidden"></em>
+        </form>
+        <div class="searchResults hidden">
+            <h2>Results:</h2>
+            <ul>
+
+            </ul>
+        </div>
         <div class="monster statBlock hidden">
             <div>
                 <h1 class="name">Monster Name</h1>
-                <img src="" alt="" class="monsterImg hidden"><br>
-                <em><span class="size">size</span> <span class="type">type</span>, <span class="alignment">alignment</span></em>
-                <br><br>
+                <em><span class="size">size</span> <span class="type">type</span>, <span class="alignment">alignment</span></em><hr>
                 <b>Armor Class</b> <span class="ac">##</span><br>
                 <b>Hit Points</b> <span class="hp">##</span><br>
                 <b>Speed</b> <span class="speed">##</span><br>
-                <br>
-                <table class="stats">
-                    <tr>
-                        <th>STR</th>
-                        <th>DEX</th>
-                        <th>CON</th>
-                        <th>INT</th>
-                        <th>WIS</th>
-                        <th>CHA</th>
-                    </tr>
-                    <tr>
-                        <td class="str">##</td>
-                        <td class="dex">##</td>
-                        <td class="con">##</td>
-                        <td class="int">##</td>
-                        <td class="wis">##</td>
-                        <td class="cha">##</td>
-                    </tr>
-                </table>
+                <hr>
+                <div class="attributes">
+                    <div class="attr" id = "str">
+                        <b>STR</b><br>
+                        <span class="num"></span>
+                    </div>
+                    <div class="attr" id="dex">
+                        <b>DEX</b><br>
+                        <span class="num"></span>
+                    </div>
+                    <div class="attr" id = "con">
+                        <b>CON</b><br>
+                        <span class="num"></span>
+                    </div>
+                    <div class="attr" id="int">
+                        <b>INT</b><br>
+                        <span class="num"></span>
+                    </div>
+                    <div class="attr" id="wis">
+                        <b>WIS</b><br>
+                        <span class="num"></span>
+                    </div>
+                    <div class="attr" id ="cha">
+                        <b>CHA</b><br>
+                        <span class="num"></span>
+                    </div>
+                </div>
+                <hr>
+                <p><b>Challenge:</b> <span class="cr"></span> (<span class="xp">##</span> XP)</p>
             </div>
             <div>
 
