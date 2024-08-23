@@ -61,3 +61,6 @@ async function getRandomMonster(){
 }
 
 monsterBtn.addEventListener("click", getRandomMonster);
+
+const roll1 = dice.roll('d20+4-d4');
+console.log(roll1);
