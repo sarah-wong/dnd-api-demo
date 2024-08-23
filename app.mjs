@@ -3,6 +3,10 @@ import * as dndAPI from './dndAPI.mjs';
 const monsterDisplay = document.querySelector(".monster");
 const monsterBtn = document.querySelector(".randomMonster");
 
+function monsterStat(str){
+    return monsterDisplay.querySelector('.'+str);
+}
+
 async function getRandomMonster(){
     const monsterList = dndAPI.data['monsters']
     const randIndex = Math.floor(Math.random() * monsterList.length);
@@ -11,28 +15,28 @@ async function getRandomMonster(){
 
     const monster = await dndAPI.getMonster(id);
     
-    monsterDisplay.querySelector('.name').textContent = monster['name'];
+    monsterStat('name').textContent = monster['name'];
 
-    monsterDisplay.querySelector('.size').textContent = monster['size'];
-    monsterDisplay.querySelector('.type').textContent = monster['type'];
-    monsterDisplay.querySelector('.alignment').textContent = monster['alignment'];
+    monsterStat('size').textContent = monster['size'];
+    monsterStat('type').textContent = monster['type'];
+    monsterStat('alignment').textContent = monster['alignment'];
 
-    monsterDisplay.querySelector('.ac').textContent = monster['armor_class'][0]['value'];
-    monsterDisplay.querySelector('.hp').textContent = monster['hit_points'];
-    monsterDisplay.querySelector('.speed').textContent = monster['speed']['walk'];
+    monsterStat('ac').textContent = monster['armor_class'][0]['value'];
+    monsterStat('hp').textContent = monster['hit_points'];
+    monsterStat('speed').textContent = monster['speed']['walk'];
 
-    monsterDisplay.querySelector('.str').textContent = monster['strength'];
-    monsterDisplay.querySelector('.dex').textContent = monster['dexterity'];
-    monsterDisplay.querySelector('.con').textContent = monster['constitution'];
-    monsterDisplay.querySelector('.int').textContent = monster['intelligence'];
-    monsterDisplay.querySelector('.wis').textContent = monster['wisdom'];
-    monsterDisplay.querySelector('.cha').textContent = monster['charisma'];
+    monsterStat('str').textContent = monster['strength'];
+    monsterStat('dex').textContent = monster['dexterity'];
+    monsterStat('con').textContent = monster['constitution'];
+    monsterStat('int').textContent = monster['intelligence'];
+    monsterStat('wis').textContent = monster['wisdom'];
+    monsterStat('cha').textContent = monster['charisma'];
 
     if(monsterDisplay.classList.contains('hidden')){
         monsterDisplay.classList.remove('hidden');
     }
 
-    const monsterImg = monsterDisplay.querySelector('.monsterImg')
+    const monsterImg = monsterStat('monsterImg')
     if(monster['image']){
         monsterImg.src = await dndAPI.getMonsterImage(id);
         monsterImg.classList.remove("hidden");
