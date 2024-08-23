@@ -1,4 +1,5 @@
 import * as dndAPI from './dndAPI.mjs';
+import * as dice from './dice.mjs';
 
 const monsterDisplay = document.querySelector(".monster");
 const monsterBtn = document.querySelector(".randomMonster");
