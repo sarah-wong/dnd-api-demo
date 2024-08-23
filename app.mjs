@@ -117,6 +117,8 @@ function searchMonsterByName(e){
         return;
     }
 
+    textInput.value = ""
+
     let results = []
     for (const monster of monsterList) {
         const _name = monster['name'];
