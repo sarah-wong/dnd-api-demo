@@ -1,6 +1,7 @@
 import * as dndAPI from './dndAPI.mjs';
 
 const monsterDisplay = document.querySelector(".monster");
+const monsterBtn = document.querySelector(".randomMonster")
 
 async function getRandomMonster(){
     const monsterList = dndAPI.data['monsters']
@@ -42,4 +43,4 @@ async function getRandomMonster(){
    
 }
 
-document.querySelector(".randomMonster").addEventListener("click",getRandomMonster);
+monsterBtn.addEventListener("click",getRandomMonster);
