@@ -36,7 +36,7 @@ async function getRandomMonster(){
         monsterDisplay.classList.remove('hidden');
     }
 
-    const monsterImg = monsterStat('monsterImg')
+    const monsterImg = monsterStat('monsterImg');
     if(monster['image']){
         monsterImg.src = await dndAPI.getMonsterImage(id);
         monsterImg.classList.remove("hidden");
@@ -47,4 +47,4 @@ async function getRandomMonster(){
    
 }
 
-monsterBtn.addEventListener("click",getRandomMonster);
+monsterBtn.addEventListener("click", getRandomMonster);
