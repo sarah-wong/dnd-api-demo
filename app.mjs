@@ -7,6 +7,11 @@ function monsterStat(str){
     return monsterDisplay.querySelector('.'+str);
 }
 
+function calcMod(x){
+    const mod =  Math.floor((Number(x) - 10)/2);
+    return ` (${mod>=0?'+':''}${mod})`;
+}
+
 async function getRandomMonster(){
     const monsterList = dndAPI.data['monsters']
     const randIndex = Math.floor(Math.random() * monsterList.length);
@@ -25,12 +30,19 @@ async function getRandomMonster(){
     monsterStat('hp').textContent = monster['hit_points'];
     monsterStat('speed').textContent = monster['speed']['walk'];
 
-    monsterStat('str').textContent = monster['strength'];
-    monsterStat('dex').textContent = monster['dexterity'];
-    monsterStat('con').textContent = monster['constitution'];
-    monsterStat('int').textContent = monster['intelligence'];
-    monsterStat('wis').textContent = monster['wisdom'];
-    monsterStat('cha').textContent = monster['charisma'];
+    const str = monster['strength'];
+    const dex = monster['dexterity'];
+    const con = monster['constitution'];
+    const int = monster['intelligence'];
+    const wis = monster['wisdom'];
+    const cha = monster['charisma'];
+
+    monsterStat('str').textContent = str + calcMod(str);
+    monsterStat('dex').textContent = dex + calcMod(dex);
+    monsterStat('con').textContent = con + calcMod(con);
+    monsterStat('int').textContent = int + calcMod(int);
+    monsterStat('wis').textContent = wis + calcMod(wis);
+    monsterStat('cha').textContent = cha + calcMod(cha);
 
     if(monsterDisplay.classList.contains('hidden')){
         monsterDisplay.classList.remove('hidden');

@@ -1,6 +1,9 @@
 .statBlock{
     background-color:palegoldenrod;
     width:fit-content;
+    display:flex;
+    justify-content: space-evenly;
+    gap:2em;
 }
 .name{
     margin:0px;
