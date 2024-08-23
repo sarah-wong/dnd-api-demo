@@ -27,6 +27,10 @@ async function getRandomMonster(){
     monsterDisplay.querySelector('.wis').textContent = monster['wisdom'];
     monsterDisplay.querySelector('.cha').textContent = monster['charisma'];
 
+    if(monsterDisplay.classList.contains('hidden')){
+        monsterDisplay.classList.remove('hidden');
+    }
+
     const monsterImg = monsterDisplay.querySelector('.monsterImg')
     if(monster['image']){
         monsterImg.src = await dndAPI.getMonsterImage(id);

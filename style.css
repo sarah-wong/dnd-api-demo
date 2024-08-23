@@ -1,5 +1,9 @@
 .statBlock{
     background-color:palegoldenrod;
+    width:fit-content;
+}
+.name{
+    margin:0px;
 }
 
 .stats, th, td{
