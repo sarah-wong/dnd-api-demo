@@ -1,3 +1,22 @@
+body{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    height:82vh;
+    width:98vw;
+    padding:5em;
+    background-image:url("https://wallpapercave.com/wp/wp2227193.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    margin:0px;
+}
+.pageTitle{
+    font-size:xxx-large;
+}
+.monsterSearch{
+    margin:2em;
+}
 .statBlock{
     background:url("https://images.pond5.com/old-yellow-brown-vintage-parchment-illustration-020576673_iconl_nowm.jpeg");
     background-position:center;
